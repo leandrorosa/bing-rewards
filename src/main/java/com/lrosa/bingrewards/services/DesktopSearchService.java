@@ -1,7 +1,6 @@
 package com.lrosa.bingrewards.services;
 
 import com.lrosa.bingrewards.config.BingConfig;
-import com.lrosa.bingrewards.config.DriverConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;

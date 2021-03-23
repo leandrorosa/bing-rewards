@@ -3,14 +3,11 @@ name: bing rewards cron job
 on:
   schedule:
     - cron: 0 8 * * *
-  
+
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      env:
-        BING_REWARDS_USER: ${{ secrets.BING_REWARDS_USER }}
-        BING_REWARDS_PASSWORD: ${{ secrets.BING_REWARDS_PASSWORD }}
     - name: Collect Bing Rewards Points
-      run: docker run leandrorosa/bing-rewards:latest
+      run: docker run -e BING_REWARDS_USER=${{ secrets.BING_REWARDS_USER }} -e BING_REWARDS_PASSWORD=${{ secrets.BING_REWARDS_PASSWORD }} leandrorosa/bing-rewards:latest

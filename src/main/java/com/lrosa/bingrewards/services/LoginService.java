@@ -1,5 +1,6 @@
 package com.lrosa.bingrewards.services;
 
+import com.lrosa.bingrewards.config.BingConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.stereotype.Service;
-import com.lrosa.bingrewards.config.BingConfig;
 
 @Slf4j
 @Service
@@ -35,7 +35,8 @@ public class LoginService {
         .click();
     driver.findElement(By.id("idSIButton9")).click();
 
-    new WebDriverWait(driver, 5)
+    log.info("Processing login with user {}", user);
+    new WebDriverWait(driver, 15)
         .until(ExpectedConditions.urlContains("https://account.microsoft.com/"));
 
     log.info("Logged in with user {}", user);

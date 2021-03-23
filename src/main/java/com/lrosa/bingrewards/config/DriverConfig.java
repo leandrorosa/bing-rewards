@@ -3,10 +3,8 @@ package com.lrosa.bingrewards.config;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import lombok.Getter;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -29,8 +27,6 @@ public class DriverConfig {
   public ChromeDriver desktopDriver() {
     return buildDriver(DESKTOP_AGENT);
   }
-
-
 
   private ChromeDriver buildDriver(String agent) {
     var options = new ChromeOptions();
