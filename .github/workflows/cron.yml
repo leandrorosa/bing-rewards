@@ -1,15 +1,12 @@
-name: Docker Image CI
+name: bing rewards cron job
 
 on:
   schedule:
     - cron: 0 8 * * *
   
 jobs:
-
   run:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
       env:
